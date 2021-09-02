@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11759" systemVersion="16D32" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Asignatura" representedClassName="Asignatura" syncable="YES">
+        <attribute name="creditos" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="indice" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="nombre" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="profesor" optional="YES" attributeType="Transformable" syncable="YES"/>
+        <attribute name="promedio" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="cortes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Corte" inverseName="asignatura" inverseEntity="Corte" syncable="YES"/>
+        <relationship name="periodo" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Periodo" inverseName="asignaturas" inverseEntity="Periodo" syncable="YES"/>
+    </entity>
+    <entity name="Corte" representedClassName="Corte" syncable="YES">
+        <attribute name="definitiva" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="fechaFinal" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="fechaInicial" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="indice" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="nombre" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="porcentaje" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="promedio" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="asignatura" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Asignatura" inverseName="cortes" inverseEntity="Asignatura" syncable="YES"/>
+        <relationship name="formasEvaluacion" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="FormaEvaluacion" inverseName="corte" inverseEntity="FormaEvaluacion" syncable="YES"/>
+    </entity>
+    <entity name="Escala" representedClassName="Escala" syncable="YES">
+        <attribute name="descripcion" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="indice" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="tipo" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="valorAlfa" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="valorMinParaAprobacion" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="programas" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Programa" inverseName="escala" inverseEntity="Programa" syncable="YES"/>
+        <relationship name="rangos" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="RangoEscala" inverseName="escala" inverseEntity="RangoEscala" syncable="YES"/>
+    </entity>
+    <entity name="Evaluacion" representedClassName="Evaluacion" syncable="YES">
+        <attribute name="compartido" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="definitiva" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="descripcion" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="fecha" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="hora" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="imagen" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="indice" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="nota" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="notaAlfa" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="puntosAdicionales" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="formaEvaluacion" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="FormaEvaluacion" inverseName="evaluaciones" inverseEntity="FormaEvaluacion" syncable="YES"/>
+        <relationship name="recordatorio" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Recordatorio" inverseName="evaluacion" inverseEntity="Recordatorio" syncable="YES"/>
+    </entity>
+    <entity name="FormaEvaluacion" representedClassName="FormaEvaluacion" syncable="YES">
+        <attribute name="definitiva" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="indice" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="indiceTipoEvaluacion" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="nombre" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="porcentaje" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="promedio" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="corte" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Corte" inverseName="formasEvaluacion" inverseEntity="Corte" syncable="YES"/>
+        <relationship name="evaluaciones" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Evaluacion" inverseName="formaEvaluacion" inverseEntity="Evaluacion" syncable="YES"/>
+    </entity>
+    <entity name="Institucion" representedClassName="Institucion" syncable="YES">
+        <attribute name="descripcion" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="indice" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="indicePais" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="programas" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Programa" inverseName="institucion" inverseEntity="Programa" syncable="YES"/>
+    </entity>
+    <entity name="Periodo" representedClassName="Periodo" syncable="YES">
+        <attribute name="creditos" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="fechaFinal" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="fechaInicial" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="indice" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="indiceDuracion" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="nombre" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="promedio" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="asignaturas" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Asignatura" inverseName="periodo" inverseEntity="Asignatura" syncable="YES"/>
+        <relationship name="programa" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Programa" inverseName="periodos" inverseEntity="Programa" syncable="YES"/>
+    </entity>
+    <entity name="Programa" representedClassName="Programa" syncable="YES">
+        <attribute name="duracion" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="esPromedioPonderado" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="indice" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="indiceNivelAcademico" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="indicePais" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="nombre" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="promedio" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="escala" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Escala" inverseName="programas" inverseEntity="Escala" syncable="YES"/>
+        <relationship name="institucion" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Institucion" inverseName="programas" inverseEntity="Institucion" syncable="YES"/>
+        <relationship name="periodos" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Periodo" inverseName="programa" inverseEntity="Periodo" syncable="YES"/>
+    </entity>
+    <entity name="RangoEscala" representedClassName="RangoEscala" syncable="YES">
+        <attribute name="descripcion" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="indice" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="indiceEscala" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="limiteInferior" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="limiteSuperior" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="valor" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="valorAlfa" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="valorMinParaAprobacion" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="escala" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Escala" inverseName="rangos" inverseEntity="Escala" syncable="YES"/>
+    </entity>
+    <entity name="Recordatorio" representedClassName="Recordatorio" syncable="YES">
+        <attribute name="detenida" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="enPausa" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="fecha" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="frecuenciaAviso" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="hora" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="indice" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="indiceFrecuenciaAviso" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="indicePrevioAviso" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="mensaje" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="previoAviso" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="programado" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="evaluacion" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Evaluacion" inverseName="recordatorio" inverseEntity="Evaluacion" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Asignatura" positionX="198" positionY="-36" width="128" height="150"/>
+        <element name="Corte" positionX="187" positionY="180" width="128" height="180"/>
+        <element name="Escala" positionX="-252" positionY="-603" width="128" height="150"/>
+        <element name="Evaluacion" positionX="88" positionY="450" width="128" height="225"/>
+        <element name="FormaEvaluacion" positionX="-180" positionY="312" width="128" height="165"/>
+        <element name="Institucion" positionX="279" positionY="-207" width="128" height="105"/>
+        <element name="Periodo" positionX="-245" positionY="-126" width="128" height="180"/>
+        <element name="Programa" positionX="-18" positionY="-441" width="128" height="210"/>
+        <element name="RangoEscala" positionX="-54" positionY="-459" width="128" height="180"/>
+        <element name="Recordatorio" positionX="268" positionY="396" width="128" height="225"/>
+    </elements>
+</model>

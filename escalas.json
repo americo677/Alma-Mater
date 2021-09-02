@@ -1,0 +1,244 @@
+{
+  "Escala" : [
+    {
+      "programas" : [
+
+      ],
+      "descripcion" : "Escala de 0 a 5",
+      "indicePais" : -1,
+      "rangos" : [
+        {
+          "escala" : {
+
+          },
+          "limiteInferior" : 0,
+          "descripcion" : "Nota mínima",
+          "limiteSuperior" : 1.5,
+          "valorAlfa" : "R",
+          "indiceEscala" : 1,
+          "valor" : 0,
+          "indice" : 1
+        },
+        {
+          "escala" : {
+
+          },
+          "limiteInferior" : 1.6,
+          "descripcion" : "Malo",
+          "limiteSuperior" : 2,
+          "valorAlfa" : "R",
+          "indiceEscala" : 1,
+          "valor" : 0,
+          "indice" : 2
+        },
+        {
+          "escala" : {
+
+          },
+          "limiteInferior" : 2.1,
+          "descripcion" : "Deficiente",
+          "limiteSuperior" : 2.5,
+          "valorAlfa" : "R",
+          "indiceEscala" : 1,
+          "valor" : 0,
+          "indice" : 3
+        },
+        {
+          "escala" : {
+
+          },
+          "limiteInferior" : 2.6,
+          "descripcion" : "Aceptable",
+          "limiteSuperior" : 3,
+          "valorAlfa" : "R",
+          "indiceEscala" : 1,
+          "valor" : 0,
+          "indice" : 4
+        },
+        {
+          "escala" : {
+
+          },
+          "limiteInferior" : 3.1,
+          "descripcion" : "Regular",
+          "limiteSuperior" : 3.5,
+          "valorAlfa" : "A",
+          "indiceEscala" : 1,
+          "valor" : 0,
+          "indice" : 5
+        },
+        {
+          "escala" : {
+
+          },
+          "limiteInferior" : 3.6,
+          "descripcion" : "Bueno",
+          "limiteSuperior" : 4,
+          "valorAlfa" : "A",
+          "indiceEscala" : 1,
+          "valor" : 0,
+          "indice" : 6
+        },
+        {
+          "escala" : {
+
+          },
+          "limiteInferior" : 4.1,
+          "descripcion" : "Muy bueno",
+          "limiteSuperior" : 4.5,
+          "valorAlfa" : "A",
+          "indiceEscala" : 1,
+          "valor" : 0,
+          "indice" : 7
+        },
+        {
+          "escala" : {
+
+          },
+          "limiteInferior" : 4.6,
+          "descripcion" : "Excelente",
+          "limiteSuperior" : 5,
+          "valorAlfa" : "A",
+          "indiceEscala" : 1,
+          "valor" : 0,
+          "indice" : 8
+        }
+      ],
+      "tipo" : 1,
+      "indice" : 1,
+      "valorMinParaAprobacion" : 3.1
+    },
+    {
+      "programas" : [
+
+      ],
+      "descripcion" : "Escala de 0 a 10",
+      "indicePais" : -1,
+      "rangos" : [
+        {
+          "escala" : {
+
+          },
+          "limiteInferior" : 0,
+          "descripcion" : "Deficiente",
+          "limiteSuperior" : 3.9,
+          "valorAlfa" : "D",
+          "indiceEscala" : 2,
+          "valor" : 0,
+          "indice" : 9
+        },
+        {
+          "escala" : {
+
+          },
+          "limiteInferior" : 4,
+          "descripcion" : "Insuficiente",
+          "limiteSuperior" : 6.4,
+          "valorAlfa" : "I",
+          "indiceEscala" : 2,
+          "valor" : 0,
+          "indice" : 10
+        },
+        {
+          "escala" : {
+
+          },
+          "limiteInferior" : 6.5,
+          "descripcion" : "Aceptable",
+          "limiteSuperior" : 7.9,
+          "valorAlfa" : "A",
+          "indiceEscala" : 2,
+          "valor" : 0,
+          "indice" : 11
+        },
+        {
+          "escala" : {
+
+          },
+          "limiteInferior" : 8,
+          "descripcion" : "Muy bien",
+          "limiteSuperior" : 9.4,
+          "valorAlfa" : "MB",
+          "indiceEscala" : 2,
+          "valor" : 0,
+          "indice" : 12
+        },
+        {
+          "escala" : {
+
+          },
+          "limiteInferior" : 9.5,
+          "descripcion" : "Excelente",
+          "limiteSuperior" : 10,
+          "valorAlfa" : "E",
+          "indiceEscala" : 2,
+          "valor" : 0,
+          "indice" : 13
+        }
+      ],
+      "tipo" : 1,
+      "indice" : 2,
+      "valorMinParaAprobacion" : 6.0
+    },
+    {
+      "programas" : [
+
+      ],
+      "descripcion" : "Escala de 1 a 20",
+      "indicePais" : -1,
+      "rangos" : [
+        {
+          "escala" : {
+
+          },
+          "limiteInferior" : 1,
+          "descripcion" : "Reprobado",
+          "limiteSuperior" : 9,
+          "valorAlfa" : "F",
+          "indiceEscala" : 3,
+          "valor" : 0,
+          "indice" : 14
+        },
+        {
+          "escala" : {
+
+          },
+          "limiteInferior" : 10,
+          "descripcion" : "Regular",
+          "limiteSuperior" : 12,
+          "valorAlfa" : "C",
+          "indiceEscala" : 3,
+          "valor" : 0,
+          "indice" : 15
+        },
+        {
+          "escala" : {
+
+          },
+          "limiteInferior" : 13,
+          "descripcion" : "Bueno",
+          "limiteSuperior" : 15,
+          "valorAlfa" : "B",
+          "indiceEscala" : 3,
+          "valor" : 0,
+          "indice" : 16
+        },
+        {
+          "escala" : {
+
+          },
+          "limiteInferior" : 16,
+          "descripcion" : "Muy Bueno",
+          "limiteSuperior" : 20,
+          "valorAlfa" : "A",
+          "indiceEscala" : 3,
+          "valor" : 0,
+          "indice" : 17
+        }
+      ],
+      "tipo" : 1,
+      "indice" : 3,
+      "valorMinParaAprobacion" : 10
+    }
+  ]
+}
